@@ -7,10 +7,10 @@
 
  To use:
 
-  1. Create an instance of BLESerial
-  2. Define it as Serial (not necessary as you can use it directly as your named instance 
-     but makes it easy to add to existing programs)
-  3. Make sure you call begin()   
+  1. Create an instance of BLESerial 
+  2. Make sure you call begin()   
+
+ In this example we don't redefine bleSerial as Serial as we want to use both the bluetooth serial and the regular serial monitor. 
 
  There is a connected() method that enables you to find out whether a bluetooth central manager is connected.
 
@@ -24,38 +24,31 @@
 
 BLESerial bleSerial;
 
-char message[] = "A message";
-
-#define Serial bleSerial
-
 #define LEDPin 5
 
 void setup() {  
-  Serial.begin("IoT-Bus Bluetooth Serial"); 
+  Serial.begin(115200);
+  bleSerial.begin("IoT-Bus Bluetooth Serial"); 
   pinMode(LEDPin, OUTPUT);
   digitalWrite(LEDPin, LOW);
 }
 
 void loop() {
-  if (Serial.connected()){ 
-
-    digitalWrite(LEDPin, HIGH);
-    // some output
-    Serial.println("Output being sent to Bluetooth");
-    Serial.println("Starting");
-
-    for(int i=0; i<strlen(message);i++){
-      Serial.write(message[i]);
-    }
-    Serial.println();
-
-    Serial.println(F("Another message"));
-
-    Serial.println();
+  if (bleSerial.connected()){  
+    digitalWrite(LEDPin, LOW);  
+    // Read input
+    if(bleSerial.available())
+    {
+      Serial.println("*********");
+      while(bleSerial.available())
+      {
+        Serial.write(bleSerial.read());
+      }
+      Serial.println("*********");
+    }  
   }
   else{
-    digitalWrite(LEDPin, LOW);
+    digitalWrite(LEDPin, HIGH);
   }
-
 }
 
