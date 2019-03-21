@@ -60,7 +60,7 @@ BLESerial::~BLESerial(void)
 bool BLESerial::begin(String localName)
 {
     // Create the BLE Device
-    BLEDevice::init("IoT-Bus UART Service");
+    BLEDevice::init(localName);
 
     // Create the BLE Server
     pServer = BLEDevice::createServer();
