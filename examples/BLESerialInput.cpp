@@ -17,6 +17,10 @@
  You will need an Ios or Android app on your phone that will connect to the Nordic BLE Serial UART service
  and use its associated characteristics.   
 
+We suggest using basic-chat which is a Bluetooth Low Energy App for iOS using Swift originally written by Adafruit. 
+This fork is updated for Swift 4 and to easily interface with BLESerial library for esp32 on github at: 
+https://github.com/iot-bus/basic-chat
+
 */
 
 #include "BLESerial.h"
