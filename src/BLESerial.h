@@ -33,7 +33,7 @@ class BLESerial: public Stream
         BLESerial(void);
         ~BLESerial(void);
 
-        bool begin(String localName=String("IoT-Bus UART Service"));
+        bool begin(char* localName="IoT-Bus UART Service");
         int available(void);
         int peek(void);
         bool connected(void);

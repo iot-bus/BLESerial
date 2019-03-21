@@ -57,7 +57,7 @@ BLESerial::~BLESerial(void)
 
 // Begin bluetooth serial
 
-bool BLESerial::begin(String localName)
+bool BLESerial::begin(char* localName)
 {
     // Create the BLE Device
     BLEDevice::init(localName);
