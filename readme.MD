@@ -22,3 +22,10 @@ To interact with this the ESP32 there are several options:
 3. Basic-chat which is a Bluetooth Low Energy App for iOS using Swift originally written by Adafruit. 
  This fork is updated for Swift 4 and to easily interface with BLESerial library for esp32 on github at: 
  https://github.com/iot-bus/basic-chat
+
+ ## Installation
+- (Make sure you can use the ESP32 with the Arduino IDE. [Instructions can be found here.](https://github.com/espressif/arduino-esp32#installation-instructions))
+- Download the current repository, by clicking code in the right top, and download ZIP.
+- In the Arduino IDE go to "Sketch" -> "Include Library" -> "Add .ZIP Library..." and select the file you just downloaded.
+- Select an ESP32 board in "Tools" -> "Board"
+- You can now go to "File" -> "Examples" -> "BLESerial" and select any of the examples to get started.
