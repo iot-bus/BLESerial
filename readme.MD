@@ -15,6 +15,10 @@
  You will need an Ios or Android app on your phone that will connect to the Nordic BLE Serial UART service
  and use its associated characteristics.  
 
- We suggest using basic-chat which is a Bluetooth Low Energy App for iOS using Swift originally written by Adafruit. 
+To interact with this the ESP32 there are several options:
+
+1. Adafruit ["Bluefruit le Connect" App](https://learn.adafruit.com/bluefruit-le-connect), this lets you plot the values, see the messages, send messages and more...
+2. If you want to create your own application useing P5 you can use [p5.ble.js](https://github.com/ITPNYU/p5.ble.js/tree/master/examples/BluefruitLE), we made [an example for plotting the values](https://editor.p5js.org/lemio/sketches/qKGGxBG4C).
+3. Basic-chat which is a Bluetooth Low Energy App for iOS using Swift originally written by Adafruit. 
  This fork is updated for Swift 4 and to easily interface with BLESerial library for esp32 on github at: 
  https://github.com/iot-bus/basic-chat
