@@ -31,8 +31,8 @@ void loop() {
   //If we're connected
   if (bleSerial.connected()){  
     //Send the analog value
-    bleSerial.println(analogRead(34));
-    Serial.println(analogRead(34));
+    bleSerial.println(analogRead(A0));
+    Serial.println(analogRead(A0));
     //Wait for 1 second
     delay(100);
   }
