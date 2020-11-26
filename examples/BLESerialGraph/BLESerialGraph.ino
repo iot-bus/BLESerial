@@ -23,8 +23,6 @@ BLESerial bleSerial;
 void setup() {  
   Serial.begin(115200);
   bleSerial.begin("BLE-UART");
-  pinMode(LEDPin, OUTPUT);
-  digitalWrite(LEDPin, LOW);
 }
 
 void loop() {
@@ -33,7 +31,7 @@ void loop() {
     //Send the analog value
     bleSerial.println(analogRead(A0));
     Serial.println(analogRead(A0));
-    //Wait for 1 second
+    //Wait for 0.1 second
     delay(100);
   }
 }
